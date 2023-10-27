@@ -1,7 +1,7 @@
 const Oponent = () => {
 	return (
 		<div style={oponentStyle.oponentContainer}>
-			<OponentBattleIndictor />
+			<OponentBattleIndicator />
 			<p style={oponentStyle.oponentImage}>😈</p>
 		</div>
 	);

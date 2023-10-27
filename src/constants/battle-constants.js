@@ -1,0 +1,9 @@
+//先頭のステータスID
+export const STATUS = {
+	BATTLE_START: 0,
+	SELECT_MAIN_COMMAND: 1,
+	SELECT_SKILL_COMMAND: 2,
+	ATTACK_PHASE: 3,
+	BATTLE_END: 4,
+}
+
