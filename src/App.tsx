@@ -3,7 +3,7 @@ import Battle from './scen/battle';
 
 function App() {
   return (
-    <div>
+    <div className="App">
     <Battle />
     </div>
   );

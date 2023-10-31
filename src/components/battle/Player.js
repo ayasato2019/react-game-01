@@ -1,26 +1,22 @@
-const Player = () => {
-    return (
-        <div style={playerStyle.playerContainer}>
-            <span style={playerStyle.playerImage}>🧑‍💻</span>
-            <PlayerBattleIndicator />
-        </div>
-    );
-}
+import Name from '../monster/Name';
+import Hp from '../monster/Hp';
+import Image from '../monster/Image';
 
-const PlayerBattleIndicator = () => {
+const Player = (props) => {
+    const { player } = props;
     return (
-        <div style={playerStyle.battleIndicaterContainer}>
-            <span style={playerStyle.battleIndicaterName}>みならいプログラマー：L5</span>
-            <div>
-                <span>HP</span>
-                <span style={playerStyle.hpString}>100/100</span>
+        <div style={style.playerContainer}>
+            <Image monster={player} size={100}>🧑‍💻</Image>
+            <div style={style.infoContainer}>
+                <Name name={player.name} level={player.level} textAlign='left' />
+                <Hp hp={player.hp} maxHp={player.maxHp} fontSize={18} />
             </div>
         </div>
     );
 }
 
-const playerStyle = {
-    battleIndicaterContainer: {
+const style = {
+    infoContainer: {
         witdh: '100%',
         height: '50px',
         display: 'flex',
@@ -32,9 +28,6 @@ const playerStyle = {
         borderBottom: '2px solid #000',
         borderRight: '2px solid #000'
     },
-    battleIndicaterName: {
-        textAlign: 'left',
-    },
     playerContainer: {
         display: 'flex',
         justifyContent: 'start',
@@ -42,14 +35,6 @@ const playerStyle = {
         alignItems: 'center',
         padding: '12px',
     },
-    playerImage: {
-        fontSize: '100px',
-    },
-    hpString: {
-        fontWeight: 'bold',
-        marginLeft: '4px',
-        fontSize: '18px',
-    }
 }
 
 export default Player;
